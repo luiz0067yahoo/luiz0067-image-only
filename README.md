@@ -7,7 +7,7 @@
 
 Bloco customizado Gutenberg para exibição direta de imagem isolada (banners promocionais, logos institucionais, selos de qualidade, avisos ou imagens pontuais) com link opcional, controle de alinhamento, largura máxima e atributos de acessibilidade/SEO.
 
-Desenvolvido em **JavaScript Vanilla (ES5)**, sem necessidade de etapas de compilação (sem Webpack, Babel ou npm), seguindo estritamente a arquitetura dos blocos do ecossistema **customADM** / **luiz0067**.
+Desenvolvido em **JavaScript Vanilla (ES5)**, sem necessidade de etapas de compilação (sem Webpack, Babel ou npm), operando **100% offline (sem requisições externas ou CDNs)** e seguindo rigorosamente todas as diretrizes da comunidade e padrões oficiais de plugins do WordPress.
 
 ![Imagem Simples (Image Only)](screenshot-1.png)
 
