@@ -48,6 +48,17 @@ luiz0067-image-only/
 
 ---
 
+## 📸 Demonstração / Screenshot
+
+![Demonstração do Bloco CustomADM - Image Only](screenshot-1.png)
+
+Para divulgação e inclusão no diretório oficial de plugins do WordPress:
+* **Arquivo:** `screenshot-1.png` / `assets/screenshot-1.png`
+* **Resolução Recomendada:** `1200 x 900 px` (proporção 4:3)
+* **Conteúdo da Imagem:** Demonstração do bloco `custom-adm/image-only` no editor Gutenberg com a barra de ferramentas de alinhamento, imagem em destaque e painel lateral do Inspetor (controles de link, acessibilidade/SEO e largura máxima).
+
+---
+
 ## 🚀 Instalação e Ativação
 
 1. Clone ou baixe este repositório dentro da pasta de plugins do WordPress:
