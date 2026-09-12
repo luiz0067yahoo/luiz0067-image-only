@@ -1,17 +1,20 @@
 <?php
 /**
- * Plugin Name: CustomADM - Image Only
- * Plugin URI:  https://github.com/luiz0067yahoo/luiz0067-image-only
- * Description: Bloco customizado Gutenberg para exibição de imagem simples/isolada com link opcional, alinhamento e largura máxima.
- * Version:     1.0.0
- * Author:      luiz0067
- * Author URI:  https://github.com/luiz0067yahoo
- * License:     GPL-2.0-or-later
- * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: custom-adm
- * Domain Path: /languages
+ * Plugin Name:       CustomADM - Image Only
+ * Plugin URI:        https://github.com/luiz0067yahoo/luiz0067-image-only
+ * Description:       Bloco customizado Gutenberg para exibição de imagem simples/isolada com link opcional, alinhamento e largura máxima.
+ * Version:           1.0.0
+ * Requires at least: 5.8
+ * Tested up to:      6.7
+ * Requires PHP:      7.4
+ * Author:            luiz0067
+ * Author URI:        https://github.com/luiz0067yahoo
+ * License:           GPL-2.0-or-later
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain:       custom-adm
+ * Domain Path:       /languages
  *
- * @package CustomADM
+ * @package           CustomADM
  */
 
 if (!defined('ABSPATH')) {
