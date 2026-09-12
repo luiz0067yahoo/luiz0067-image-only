@@ -74,12 +74,12 @@
 
         example: {
             attributes: {
-                imageUrl: 'https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=1200&q=80',
+                imageUrl: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675"><rect width="1200" height="675" fill="%231e293b"/><circle cx="600" cy="270" r="110" fill="%233b82f6" opacity="0.3"/><polygon points="360,490 580,290 800,490" fill="%233b82f6" opacity="0.75"/><polygon points="520,490 680,350 840,490" fill="%2360a5fa" opacity="0.55"/><rect x="420" y="530" width="360" height="18" rx="9" fill="%2394a3b8" opacity="0.4"/></svg>',
                 altText: __('Demonstração de Imagem Simples', 'custom-adm'),
                 alignment: 'center',
                 maxWidth: '650px',
-                url: 'https://example.com',
-                targetBlank: true
+                url: '',
+                targetBlank: false
             }
         },
 
