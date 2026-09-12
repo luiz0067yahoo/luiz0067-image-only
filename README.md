@@ -9,7 +9,7 @@ Bloco customizado Gutenberg para exibição direta de imagem isolada (banners pr
 
 Desenvolvido em **JavaScript Vanilla (ES5)**, sem necessidade de etapas de compilação (sem Webpack, Babel ou npm), seguindo estritamente a arquitetura dos blocos do ecossistema **customADM** / **luiz0067**.
 
-![CustomADM - Image Only](screenshot-1.png)
+![Imagem Simples (Image Only)](screenshot-1.png)
 
 ---
 
@@ -25,8 +25,11 @@ luiz0067-image-only/
 ├── js/
 │   └── blocks/
 │       └── image-only.js         # Implementação ES5 Vanilla do bloco (edit e save)
-├── languages/
-│   └── custom-adm-image-only.pot # Arquivo modelo de tradução (Gettext)
+├── languages/                    # Pacote de internacionalização (arquivos JSON)
+│   ├── pt_BR.json                # Português do Brasil (pt_BR)
+│   ├── en_US.json                # Inglês (en_US)
+│   ├── es_ES.json                # Espanhol (es_ES)
+│   └── it_IT.json                # Italiano (it_IT)
 ├── image-only.php                # Registro do plugin, assets e integração com hooks do WP
 ├── README.md                     # Documentação completa
 └── screenshot-1.png              # Pré-visualização do bloco (1200x900px)
@@ -50,12 +53,12 @@ luiz0067-image-only/
 
 ## 📸 Demonstração / Screenshot
 
-![Demonstração do Bloco CustomADM - Image Only](screenshot-1.png)
+![Demonstração do Bloco Imagem Simples](screenshot-1.png)
 
 Para divulgação e inclusão no diretório oficial de plugins do WordPress:
 * **Arquivo:** `screenshot-1.png` / `assets/screenshot-1.png`
 * **Resolução Recomendada:** `1200 x 900 px` (proporção 4:3)
-* **Conteúdo da Imagem:** Demonstração do bloco `custom-adm/image-only` no editor Gutenberg com a barra de ferramentas de alinhamento, imagem em destaque e painel lateral do Inspetor (controles de link, acessibilidade/SEO e largura máxima).
+* **Conteúdo da Imagem:** Demonstração do bloco no editor Gutenberg com a barra de ferramentas de alinhamento, imagem em destaque e painel lateral do Inspetor (controles de link, acessibilidade/SEO e largura máxima).
 
 ---
 
@@ -77,11 +80,12 @@ Para divulgação e inclusão no diretório oficial de plugins do WordPress:
 
 O bloco suporta internacionalização completa por meio de `wp.i18n.__` no JavaScript e `__()` no PHP, utilizando o textdomain `custom-adm`.
 
-Idiomas mapeados:
-- 🇧🇷 **Português do Brasil (`pt_BR`)**
-- 🇺🇸 **Inglês (`en_US`)**
-- 🇪🇸 **Espanhol (`es_ES`)**
-- 🇮🇹 **Italiano (`it_IT`)**
+Os arquivos de tradução são exclusivamente em formato `.json`, localizados na pasta `/languages/` e carregados nativamente pelo Gutenberg via `load_script_translation_file`:
+
+- 🇧🇷 **Português do Brasil (`pt_BR`)**: `pt_BR.json`
+- 🇺🇸 **Inglês (`en_US`)**: `en_US.json`
+- 🇪🇸 **Espanhol (`es_ES`)**: `es_ES.json`
+- 🇮🇹 **Italiano (`it_IT`)**: `it_IT.json`
 
 ---
 

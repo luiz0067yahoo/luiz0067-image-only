@@ -1,0 +1,104 @@
+{
+    "translation-revision-date": "2026-09-12 19:35:00-0300",
+    "generator": "Antigravity i18n Generator",
+    "domain": "custom-adm",
+    "locale_data": {
+        "custom-adm": {
+            "": {
+                "domain": "custom-adm",
+                "lang": "en_US",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Imagem Simples (Image Only)": [
+                "Simple Image (Image Only)"
+            ],
+            "Exibe uma imagem simples com link opcional, alinhamento e largura configuráveis.": [
+                "Displays a simple image with optional link, alignment, and customizable width."
+            ],
+            "imagem": [
+                "image"
+            ],
+            "banner": [
+                "banner"
+            ],
+            "foto": [
+                "photo"
+            ],
+            "image": [
+                "picture"
+            ],
+            "link": [
+                "link"
+            ],
+            "Demonstração de Imagem Simples": [
+                "Simple Image Demonstration"
+            ],
+            "Configurações de Link": [
+                "Link Settings"
+            ],
+            "URL de Destino (Opcional)": [
+                "Destination URL (Optional)"
+            ],
+            "Abrir link em nova aba?": [
+                "Open link in new tab?"
+            ],
+            "Acessibilidade e SEO": [
+                "Accessibility & SEO"
+            ],
+            "Texto Alternativo (Alt Text)": [
+                "Alt Text (Alternative Text)"
+            ],
+            "Descreva o conteúdo da imagem para leitores de tela e SEO.": [
+                "Describe the image content for screen readers and SEO."
+            ],
+            "Descrição da imagem...": [
+                "Image description..."
+            ],
+            "Aparência e Alinhamento": [
+                "Appearance & Alignment"
+            ],
+            "Alinhamento Horizontal": [
+                "Horizontal Alignment"
+            ],
+            "Alinhar à Esquerda": [
+                "Align Left"
+            ],
+            "Centralizar": [
+                "Align Center"
+            ],
+            "Alinhar à Direita": [
+                "Align Right"
+            ],
+            "Largura Máxima (Max Width)": [
+                "Max Width"
+            ],
+            "Exemplos: 100%, 800px, 450px, 30rem": [
+                "Examples: 100%, 800px, 450px, 30rem"
+            ],
+            "Nenhuma imagem selecionada": [
+                "No image selected"
+            ],
+            "Selecione ou envie uma imagem da Biblioteca de Mídia para este bloco.": [
+                "Select or upload an image from the Media Library for this block."
+            ],
+            "Selecionar Imagem": [
+                "Select Image"
+            ],
+            "Alterar Imagem": [
+                "Change Image"
+            ],
+            "Alterar": [
+                "Change"
+            ],
+            "Remover Imagem": [
+                "Remove Image"
+            ],
+            "Remover": [
+                "Remove"
+            ],
+            "CustomADM Blocos": [
+                "CustomADM Blocks"
+            ]
+        }
+    }
+}

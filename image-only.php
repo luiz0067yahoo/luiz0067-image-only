@@ -35,6 +35,27 @@ function customadm_image_only_load_textdomain() {
 add_action('init', 'customadm_image_only_load_textdomain');
 
 /**
+ * Filtro para carregar arquivos de tradução do script sem prefixo (ex: languages/pt_BR.json).
+ */
+function customadm_image_only_script_translations($file, $handle, $domain) {
+    if ('customadm-image-only-block' === $handle || 'custom-adm' === $domain) {
+        $locale = determine_locale();
+        $candidates = array(
+            CUSTOMADM_IMAGE_ONLY_PATH . 'languages/' . $locale . '.json',
+            CUSTOMADM_IMAGE_ONLY_PATH . 'languages/' . str_replace('-', '_', $locale) . '.json',
+            CUSTOMADM_IMAGE_ONLY_PATH . 'languages/' . strtolower(str_replace('_', '-', $locale)) . '.json',
+        );
+        foreach ($candidates as $cand) {
+            if (file_exists($cand)) {
+                return $cand;
+            }
+        }
+    }
+    return $file;
+}
+add_filter('load_script_translation_file', 'customadm_image_only_script_translations', 10, 3);
+
+/**
  * Registra a categoria customizada no editor Gutenberg se ainda não existir
  */
 function customadm_image_only_block_categories($categories, $post) {
@@ -63,6 +84,7 @@ function customadm_image_only_register_block() {
         array(
             'wp-blocks',
             'wp-element',
+            'wp-block-editor',
             'wp-editor',
             'wp-components',
             'wp-i18n'

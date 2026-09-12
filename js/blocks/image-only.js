@@ -10,6 +10,10 @@
 (function (blocks, element, blockEditor, components, i18n) {
     'use strict';
 
+    if (!blocks || !element || !blocks.registerBlockType) {
+        return;
+    }
+
     var el = element.createElement;
     var registerBlockType = blocks.registerBlockType;
     var __ = i18n.__;
@@ -190,7 +194,7 @@
                         value: maxWidth,
                         placeholder: '100%',
                         onChange: function (newWidth) {
-                            setAttributes({ maxWidth: newWidth || '100%' });
+                            setAttributes({ maxWidth: newWidth });
                         }
                     })
                 )
@@ -369,9 +373,9 @@
     });
 
 })(
-    window.wp.blocks,
-    window.wp.element,
-    window.wp.blockEditor || window.wp.editor,
-    window.wp.components,
-    window.wp.i18n
+    window.wp && window.wp.blocks,
+    window.wp && window.wp.element,
+    window.wp && (window.wp.blockEditor || window.wp.editor),
+    window.wp && window.wp.components,
+    window.wp && window.wp.i18n
 );
