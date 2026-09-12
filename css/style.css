@@ -1,0 +1,82 @@
+/**
+ * Estilos do Bloco CustomADM Image Only (Frontend & Editor)
+ *
+ * @package CustomADM
+ */
+
+.customadm-image-only-wrap {
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+}
+
+/* Alinhamentos */
+.customadm-image-only-wrap.align-left {
+    justify-content: flex-start;
+    text-align: left;
+    margin-right: auto;
+}
+
+.customadm-image-only-wrap.align-center {
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.customadm-image-only-wrap.align-right {
+    justify-content: flex-end;
+    text-align: right;
+    margin-left: auto;
+}
+
+/* Link Wrapper */
+.customadm-image-only-wrap .customadm-image-only-link {
+    display: inline-block;
+    max-width: 100%;
+    text-decoration: none;
+    line-height: 0;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, opacity 0.2s ease;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.customadm-image-only-wrap .customadm-image-only-link:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.customadm-image-only-wrap .customadm-image-only-link:active {
+    transform: translateY(0);
+}
+
+.customadm-image-only-wrap .customadm-image-only-link:focus-visible {
+    outline: 3px solid #0073aa;
+    outline-offset: 4px;
+}
+
+/* Imagem */
+.customadm-image-only-wrap .customadm-image-only-img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    transition: filter 0.3s ease;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .customadm-image-only-wrap {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .customadm-image-only-wrap.align-left,
+    .customadm-image-only-wrap.align-right {
+        justify-content: center;
+        text-align: center;
+    }
+}

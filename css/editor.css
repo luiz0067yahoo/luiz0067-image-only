@@ -1,0 +1,139 @@
+/**
+ * Estilos específicos do Editor Gutenberg para o Bloco CustomADM Image Only
+ *
+ * @package CustomADM
+ */
+
+/* Placeholder quando nenhuma imagem está selecionada */
+.customadm-image-only-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8fafc;
+    border: 2px dashed #cbd5e1;
+    border-radius: 8px;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.customadm-image-only-placeholder:hover {
+    border-color: #3b82f6;
+    background: #f1f5f9;
+}
+
+.customadm-image-only-placeholder-inner {
+    max-width: 420px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.customadm-placeholder-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 48px;
+    color: #64748b;
+    margin-bottom: 0.75rem;
+}
+
+.customadm-image-only-placeholder h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.customadm-image-only-placeholder p {
+    margin: 0 0 1.25rem 0;
+    font-size: 0.875rem;
+    color: #64748b;
+    line-height: 1.4;
+}
+
+.customadm-upload-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Wrapper no Editor */
+.customadm-image-only-editor-wrap {
+    display: flex;
+    width: 100%;
+    margin: 1.5rem 0;
+}
+
+.customadm-image-only-editor-wrap.align-left {
+    justify-content: flex-start;
+}
+
+.customadm-image-only-editor-wrap.align-center {
+    justify-content: center;
+}
+
+.customadm-image-only-editor-wrap.align-right {
+    justify-content: flex-end;
+}
+
+.customadm-image-only-inner-box {
+    position: relative;
+    max-width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.customadm-image-only-preview-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Barra de Ações Rápidas no Editor */
+.customadm-image-only-toolbar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 6px;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(6px);
+    padding: 6px;
+    border-radius: 6px;
+    z-index: 10;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+}
+
+.customadm-image-only-inner-box:hover .customadm-image-only-toolbar {
+    opacity: 1;
+}
+
+.customadm-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Indicador de Link Ativo */
+.customadm-link-badge {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(15, 23, 42, 0.8);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    max-width: 85%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    pointer-events: none;
+}
