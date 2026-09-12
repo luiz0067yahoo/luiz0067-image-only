@@ -9,23 +9,27 @@ Bloco customizado Gutenberg para exibição direta de imagem isolada (banners pr
 
 Desenvolvido em **JavaScript Vanilla (ES5)**, sem necessidade de etapas de compilação (sem Webpack, Babel ou npm), seguindo estritamente a arquitetura dos blocos do ecossistema **customADM** / **luiz0067**.
 
+![CustomADM - Image Only](screenshot-1.png)
+
 ---
 
 ## 📁 Estrutura de Arquivos
 
 ```text
 luiz0067-image-only/
+├── assets/
+│   └── screenshot-1.png          # Banner de divulgação do plugin (1200x900px)
 ├── css/
-│   ├── editor.css              # Estilos visuais exclusivos do editor Gutenberg
-│   └── style.css               # Estilos frontend (alinhamentos, responsividade e hover)
+│   ├── editor.css                # Estilos visuais exclusivos do editor Gutenberg
+│   └── style.css                 # Estilos frontend (alinhamentos, responsividade e hover)
 ├── js/
 │   └── blocks/
-│       └── image-only.js       # Implementação ES5 Vanilla do bloco (edit e save)
+│       └── image-only.js         # Implementação ES5 Vanilla do bloco (edit e save)
 ├── languages/
 │   └── custom-adm-image-only.pot # Arquivo modelo de tradução (Gettext)
-├── image-only.php              # Registro do plugin, assets e integração com hooks do WP
-├── README.md                   # Documentação completa
-└── screenshot-1.png            # Pré-visualização do bloco (1200x900px)
+├── image-only.php                # Registro do plugin, assets e integração com hooks do WP
+├── README.md                     # Documentação completa
+└── screenshot-1.png              # Pré-visualização do bloco (1200x900px)
 ```
 
 ---
