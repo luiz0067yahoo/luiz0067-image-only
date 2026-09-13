@@ -18,6 +18,53 @@
     var registerBlockType = blocks.registerBlockType;
     var __ = i18n.__;
 
+    // Função de sanitização de URL para segurança contra XSS (evita javascript:, data:, vbscript:)
+    function isSafeUrl(rawUrl) {
+        if (!rawUrl || typeof rawUrl !== 'string') {
+            return false;
+        }
+        var trimmed = rawUrl.trim().toLowerCase();
+        // Permite âncoras relativas, caminhos absolutos locais, http, https, tel e mailto
+        if (trimmed.indexOf('/') === 0 || trimmed.indexOf('#') === 0 || trimmed.indexOf('?') === 0) {
+            return true;
+        }
+        if (/^(https?|mailto|tel):/i.test(trimmed)) {
+            return true;
+        }
+        return false;
+    }
+
+    // Função para validar URLs de imagem (permite http, https, caminhos relativos e data:image/ seguro)
+    function isSafeImageUrl(rawUrl) {
+        if (!rawUrl || typeof rawUrl !== 'string') {
+            return false;
+        }
+        var trimmed = rawUrl.trim();
+        if (trimmed.indexOf('/') === 0) {
+            return true;
+        }
+        if (/^https?:\/\//i.test(trimmed)) {
+            return true;
+        }
+        if (/^data:image\/(png|jpe?g|gif|webp|svg\+xml)[;,]/i.test(trimmed)) {
+            return true;
+        }
+        return false;
+    }
+
+    // Função para sanitizar maxWidth e prevenir injeção de CSS malicioso
+    function sanitizeMaxWidth(val) {
+        if (!val || typeof val !== 'string') {
+            return '100%';
+        }
+        var trimmed = val.trim();
+        // Permite apenas números acompanhados de unidades seguras CSS: %, px, rem, em, vw, ch, vh ou 'auto' / 'none'
+        if (/^(auto|none|\d+(\.\d+)?(px|%|rem|em|vw|vh|ch))$/i.test(trimmed)) {
+            return trimmed;
+        }
+        return '100%';
+    }
+
     // Componentes do BlockEditor e Components
     var InspectorControls = blockEditor.InspectorControls || wp.editor.InspectorControls;
     var MediaUpload = blockEditor.MediaUpload || wp.editor.MediaUpload;
@@ -243,8 +290,9 @@
                 );
             } else {
                 // Estado 2: Imagem selecionada com barra de ferramentas e preview
+                var cleanMaxWidth = sanitizeMaxWidth(maxWidth);
                 var wrapperStyle = {
-                    maxWidth: maxWidth || '100%'
+                    maxWidth: cleanMaxWidth
                 };
 
                 editorContent = el(
@@ -300,16 +348,16 @@
                         ),
                         // Visualização da Imagem
                         el('img', {
-                            src: imageUrl,
+                            src: isSafeImageUrl(imageUrl) ? imageUrl : '',
                             alt: altText || '',
                             className: 'customadm-image-only-preview-img'
                         }),
                         // Badge indicativo se tem link ativo
-                        url ? el(
+                        (url && isSafeUrl(url)) ? el(
                             'div',
                             { className: 'customadm-link-badge' },
                             el(Dashicon, { icon: 'admin-links' }),
-                            ' ' + url + (targetBlank ? ' (nova aba)' : '')
+                            ' ' + url.trim() + (targetBlank ? ' (nova aba)' : '')
                         ) : null
                     )
                 );
@@ -327,8 +375,8 @@
             var alignment = attributes.alignment || 'center';
             var maxWidth = attributes.maxWidth || '100%';
 
-            // Se não houver imagem definida, não renderiza marcação vazia no frontend
-            if (!imageUrl) {
+            // Se não houver imagem definida ou não for segura, não renderiza marcação vazia no frontend
+            if (!imageUrl || !isSafeImageUrl(imageUrl)) {
                 return null;
             }
 
@@ -340,9 +388,11 @@
             });
 
             var content;
-            if (url) {
+            var safeUrl = isSafeUrl(url) ? url.trim() : '';
+
+            if (safeUrl) {
                 var linkProps = {
-                    href: url,
+                    href: safeUrl,
                     className: 'customadm-image-only-link'
                 };
 
@@ -357,8 +407,9 @@
             }
 
             var wrapStyle = {};
-            if (maxWidth && maxWidth !== '100%') {
-                wrapStyle.maxWidth = maxWidth;
+            var cleanMaxWidth = sanitizeMaxWidth(maxWidth);
+            if (cleanMaxWidth !== '100%') {
+                wrapStyle.maxWidth = cleanMaxWidth;
             }
 
             return el(
